@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from filebrowser.sites import site as fb_site
 
 urlpatterns = [
     url(r'^$', include('homepage.urls')),
-    url(r'^admin/', admin.site.urls),
-    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^admin/', include([
+        url(r'^', include(admin.site.urls)),
+        url(r'^filebrowser/', include(fb_site.urls)),
+    ])),
 ]

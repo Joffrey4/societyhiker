@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
 from django.utils.encoding import python_2_unicode_compatible
+from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
-from tinymce.models import HTMLField
+from tinymce_4.fields import TinyMCEModelField
 from taggit.managers import TaggableManager
 from django.db import models
 
@@ -18,12 +19,12 @@ class Category(models.Model):
 
 @python_2_unicode_compatible
 class Article(models.Model):
-    title = models.CharField(max_length=200)
-    subhead = models.TextField(null=True, blank=True)
-    body = HTMLField()
-    image = models.ImageField(upload_to='articles/images/header', default='articles/images/header/default.jpg')
-    link = models.SlugField(max_length=200, unique=True, null=True, blank=True)
-    date = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(_('Titre'), max_length=200)
+    subhead = models.TextField(_('Bandeau'), null=True, blank=True)
+    body = TinyMCEModelField(_('Article'))
+    image = models.ImageField(_('Image'), upload_to='articles/images/header', default='articles/images/header/default.jpg')
+    link = models.SlugField(_('Lien'), max_length=200, unique=True, null=True, blank=True)
+    date = models.DateTimeField(_('Date de publication'), auto_now_add=True)
 
     author = models.ForeignKey(User)
     category = models.ForeignKey(Category)
@@ -49,8 +50,8 @@ class Comment(models.Model):
     """
     article = models.ForeignKey(Article)
     author = models.ForeignKey(User)
-    date = models.DateTimeField(auto_now_add=True)
-    text = models.TextField(max_length=480)
+    date = models.DateTimeField(_('Date de publication'), auto_now_add=True)
+    text = models.TextField(_('Commentaire'), max_length=480)
 
     def __str__(self):
         """
