@@ -3,7 +3,17 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from tinymce.models import HTMLField
+from taggit.managers import TaggableManager
 from django.db import models
+
+
+@python_2_unicode_compatible
+class Category(models.Model):
+    title = models.CharField(max_length=20)
+    link = models.SlugField(max_length=20)
+
+    def __str__(self):
+        return self.title
 
 
 @python_2_unicode_compatible
@@ -17,10 +27,7 @@ class Article(models.Model):
 
     author = models.ForeignKey(User)
     category = models.ForeignKey(Category)
-
-    tag_one = models.ForeignKey(Tag, null=True, blank=True)
-    tag_two = models.ForeignKey(Tag, null=True, blank=True)
-    tag_three = models.ForeignKey(Tag,null=True, blank=True)
+    tags = TaggableManager()
 
     def __str__(self):
         return self.title
@@ -33,24 +40,6 @@ class Article(models.Model):
                 self.slug = '{0}-{1}'.format(slug, counter)
             counter += 1
         return super(Article, self).save(*args, **kwargs)
-
-
-@python_2_unicode_compatible
-class Category(models.Model):
-    title = models.CharField(max_length=20)
-    link = models.SlugField(max_length=20)
-
-    def __str__(self):
-        return self.title
-
-
-@python_2_unicode_compatible
-class Tag(models.Model):
-    title = models.CharField(max_length=20)
-    link = models.SlugField(max_length=20)
-
-    def __str__(self):
-        return self.title
 
 
 @python_2_unicode_compatible
