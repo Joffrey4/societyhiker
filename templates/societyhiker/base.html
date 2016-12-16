@@ -1,10 +1,78 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Society Hiker - {% block title %}{% endblock title %}</title>
+
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery.background-video.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'jquery.background-video.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.background-video').bgVideo({
+                pauseAfter: 12,
+                fadeOnEnd: true,
+                showPausePlay: false
+            });
+        });
+    </script>
 </head>
 <body>
+
+<div class="header jquery-background-video-wrapper">
+    <video class="background-video jquery-background-video" loop autoplay muted poster="{% static 'background/video/bazar/image.jpg' %}">
+        <source src="{% static 'background/video/bazar/video.mp4' %}" type="video/mp4">
+        <source src="{% static 'background/video/bazar/video.webm' %}" type="video/webm">
+        <source src="{% static 'background/video/bazar/video.ogv' %}" type="video/ogg">
+    </video>
+
+    <header>
+        <h1 class="archive-title page-title">
+            {% block page-title %}{% endblock page-title %}
+        </h1>
+
+        <div class="page-description">
+            <p>{% block description %}{% endblock description %}</p>
+        </div>
+
+        <div class="big-line"></div>
+    </header>
+</div>
+
+
+<nav>
+    <ul class="navigation">
+        <li><a href="#" title="Accueil">
+            <div class="icon-container"><i class="fa fa-home" aria-hidden="true"></i></div>
+        </a></li>
+
+        <li><a href="#" title="Auteur">
+            <div class="icon-container"><i class="fa fa-user" aria-hidden="true"></i></div>
+        </a></li>
+
+        <li><a href="#" title="Catégories">
+            <div class="icon-container"><i class="fa fa-heart" style="font-size: 19px;" aria-hidden="true"></i></div>
+        </a></li>
+
+        <li><a href="#" title="Rechercher">
+            <div class="icon-container"><i class="fa fa-search" style="font-size: 19px;" aria-hidden="true"></i></div>
+        </a></li>
+
+    </ul>
+</nav>
+
+<div class="content">
+    {% block content %}{% endblock content %}
+</div>
 
 </body>
 </html>
