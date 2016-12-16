@@ -6,15 +6,16 @@
     <meta charset="UTF-8">
     <title>Society Hiker - {% block title %}{% endblock title %}</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/jquery.background-video.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'jquery.background-video.min.css' %}">
+    <link rel="stylesheet" href="{% static 'jquery.background-video.css' %}">
 
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -28,7 +29,7 @@
 </head>
 <body>
 
-<div class="header jquery-background-video-wrapper">
+<div class="header jquery-background-video-wrapper" style="position: fixed">
     <video class="background-video jquery-background-video" loop autoplay muted poster="{% static 'background/video/bazar/image.jpg' %}">
         <source src="{% static 'background/video/bazar/video.mp4' %}" type="video/mp4">
         <source src="{% static 'background/video/bazar/video.webm' %}" type="video/webm">
@@ -51,20 +52,24 @@
 
 <nav>
     <ul class="navigation">
-        <li><a href="#" title="Accueil">
-            <div class="icon-container"><i class="fa fa-home" aria-hidden="true"></i></div>
+        <li><a href="#">
+            <div class="icon-container" id="home"><i class="fa fa-home" aria-hidden="true"></i></div>
+            <div id="home-name">Accueil</div>
         </a></li>
 
-        <li><a href="#" title="Auteur">
-            <div class="icon-container"><i class="fa fa-user" aria-hidden="true"></i></div>
+        <li><a href="#">
+            <div class="icon-container" id="author"><i class="fa fa-user" aria-hidden="true"></i></div>
+            <div id="author-name">Auteur</div>
         </a></li>
 
-        <li><a href="#" title="Catégories">
-            <div class="icon-container"><i class="fa fa-heart" style="font-size: 19px;" aria-hidden="true"></i></div>
+        <li><a href="#">
+            <div class="icon-container" id="category"><i class="fa fa-heart" style="font-size: 19px;" aria-hidden="true"></i></div>
+            <div id="category-name">Catég.</div>
         </a></li>
 
-        <li><a href="#" title="Rechercher">
-            <div class="icon-container"><i class="fa fa-search" style="font-size: 19px;" aria-hidden="true"></i></div>
+        <li><a href="#">
+            <div class="icon-container" id="search"><i class="fa fa-search" style="font-size: 19px;" aria-hidden="true"></i></div>
+            <div id="search-name">Recher.</div>
         </a></li>
 
     </ul>

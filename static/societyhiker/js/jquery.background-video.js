@@ -96,7 +96,6 @@
 
 			// Set default styles
 			$container.css({
-				'position': 'relative',
 				'overflow': 'hidden',
 				'background-size': 'cover',
 				'background-position': 'center center',

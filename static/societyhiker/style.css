@@ -33,8 +33,7 @@ p {
 }
 
 .header {
-    float: left;
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 37.2%;
@@ -113,7 +112,8 @@ header::before {
 }
 
 nav {
-    float: right;
+    position: fixed;
+    right: 0;
     width: 50px;
     z-index: 3;
     background-color: #222;
@@ -132,12 +132,12 @@ nav {
     display: block;
     color: #777;
     font-size: 22px;
-
+    transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .navigation li a:hover, .navigation li a:focus, .navigation li a:active {
-    color: #b1adad;
+    color: #fff;
 }
 
 .icon-container {
@@ -150,8 +150,26 @@ nav {
     display: table;
 }
 
+#home-name, #author-name, #category-name, #search-name {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Fira Sans', sans-serif;
+    line-height: 15px;
+    color: #fff;
+}
+
+#home:hover + #home-name, #author:hover + #author-name, #category:hover + #category-name, #search:hover + #search-name {
+    visibility: visible;
+    opacity: 1;
+}
+
 .content {
-    margin: auto;
+    position: relative;
+    left: 37.2%;
+    width: calc(62.8% - 50px);
     z-index: 2;
 }
 
