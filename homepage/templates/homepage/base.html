@@ -1,0 +1,29 @@
+{% extends "societyhiker/base.html" %}
+
+// Header section
+{% block head-title-after %}
+    - Blog de sciences, tendances, développement et nouvelles technologies.
+{% endblock head-title-after %}
+
+{% block head-css-js %}
+    {% include "societyhiker/includes/head-video.html" %}
+{% endblock head-css-js %}
+
+
+// body header section
+{% block body-header %}
+    {% include "societyhiker/includes/body-header-video.html" with video=video %}
+
+        <header>
+            {% include "societyhiker/includes/body-header-bigTitle.html" with title='Society Hiker' %}
+            {% include "societyhiker/includes/body-header-bigDescription.html" with description='Blog de sciences, tendances, développement et nouvelles technologies.' %}
+            {% include "societyhiker/includes/body-header-bigLine.html" %}
+        </header>
+    </div>
+    <!-- Error: Tag matches not closing OK -->
+{% endblock body-header %}
+
+// Content section
+{% block content %}
+    bonjour
+{% endblock content %}

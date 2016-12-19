@@ -35,10 +35,10 @@ class Article(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id:
-            self.slug = slug = slugify(self.title)
+            self.link = link = slugify(self.title)
             counter = 1
-            while self.__class__.objects.filter(slug=self.slug).exists():
-                self.slug = '{0}-{1}'.format(slug, counter)
+            while self.__class__.objects.filter(link=self.link).exists():
+                self.link = '{0}-{1}'.format(link, counter)
             counter += 1
         return super(Article, self).save(*args, **kwargs)
 

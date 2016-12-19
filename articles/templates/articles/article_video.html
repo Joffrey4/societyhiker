@@ -1,0 +1,10 @@
+{% extends "articles/article.html" %}
+{% load static %}
+
+{% block head-css-js %}
+    {% include "societyhiker/includes/head-video.html" %}
+{% endblock head-css-js %}
+
+{% block body-header-backround %}
+    {% include "societyhiker/includes/body-header-video.html" with video='header' %}
+{% endblock body-header-backround %}

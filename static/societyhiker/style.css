@@ -17,15 +17,41 @@ ul {
 
 a {
     text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+h1, h2 {
+    line-height: 1.1;
+}
+
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
     margin-top: 20px;
     margin-bottom: 10px;
-    line-height: 1.1;
     font-family: inherit;
     font-weight: 500;
     color: inherit;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 2.1rem;
+    letter-spacing: -0.01rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+h3 {
+    color: rgba(0, 0, 0, .6);
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 p {
@@ -46,7 +72,7 @@ p {
     align-items: flex-end;
     background-size: cover;
     background-color: #252525;
-    background-image: url(background/video/bazar/image.jpg);
+    background-image: url(background/video/header/image.jpg);
     background-position: top center;;
 
     -webkit-font-smoothing: antialiased;
@@ -54,7 +80,7 @@ p {
     line-height: 1.4;
 }
 
-header, .archive-title, .page-description, .big-line {
+header, .archive-title, .page-description, .big-line, .small-line, .article-meta {
     margin-left: auto;
     margin-right: auto;
 }
@@ -81,7 +107,7 @@ header::before {
     max-width: 320px;
 }
 
-.archive-title, .page-description, .big-line {
+.archive-title, .page-description, .big-line, .small-line, .article-meta {
     z-index: 1;
     position: relative;
 }
@@ -104,11 +130,36 @@ header::before {
     font-size: 2.4rem;
 }
 
-.big-line {
+.big-line, .small-line {
     content: '';
     width: 280px;
-    height: 8px;
     background-color: #fff;
+}
+
+.big-line {
+    height: 8px;
+}
+
+.small-line {
+    height: 1px;
+    opacity: 0.35;
+    margin-top: 20px;
+}
+
+.article-meta, .article-meta a{
+    padding-top: 20px;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+.article-meta a:hover, .article-meta a:focus, .article-meta a:active {
+    color: rgb(125, 125, 125);
 }
 
 nav {
@@ -132,7 +183,6 @@ nav {
     display: block;
     color: #777;
     font-size: 22px;
-    transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
@@ -173,3 +223,110 @@ nav {
     z-index: 2;
 }
 
+.content-inner {
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+@media (min-width: 736px) {
+    .content-inner {
+        max-width: 365px;
+    }
+}
+
+@media (min-width: 992px) {
+    .content-inner {
+        max-width: 480px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content-inner {
+        max-width: 660px;
+    }
+}
+
+.content-body {
+    position: relative;
+    font-family: 'PT Serif', serif;
+    color: #000;
+    font-size: 1.17rem;
+    letter-spacing: 0.005rem;
+    line-height: 1.64;
+}
+
+.article-submeta::before {
+    display: block;
+    content: '';
+    background: url(images/hiker.svg) no-repeat;
+    background-size: 48px 48px;
+    height: 48px;
+    background-position-x: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.article-submeta {
+    text-align: center;
+}
+
+.share-module {
+    height: 140px;
+}
+
+.share-content ul {
+    text-align: center;
+}
+
+.share-content ul li {
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.share-link {
+    border: 1px solid rgba(0, 0, 0, .15);
+    color: rgba(0, 0, 0, .6);
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.share-link:hover, .share-link:active, .share-link:focus {
+    border: 1px solid #999;
+}
+
+.share-google {
+    font-size: 15px;
+    padding: 10px 8px 11px;
+}
+
+.sh {
+    text-align: center;
+}
+
+.sh-facebook, .sh-twitter, .sh-tumblr, .sh-pinterest {
+    width: 16px;
+}
+
+.submeta {
+    color: rgba(0,0,0,.4);
+    font-family: 'PT Serif', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.submeta a {
+    border-color: inherit;
+    border-width: 0 0 1px;
+    border-style: solid;
+    color: inherit;
+}
+
+.submeta a:hover, .submeta a:focus, .submeta a:active {
+    color: #000;
+    opacity: .6;
+}

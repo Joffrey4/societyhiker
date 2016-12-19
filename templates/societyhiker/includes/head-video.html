@@ -1,0 +1,13 @@
+{% load static %}
+
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.background-video.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'jquery.background-video.css' %}">
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.background-video').bgVideo({
+            showPausePlay: false
+        });
+    });
+</script>

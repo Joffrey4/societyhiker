@@ -19,6 +19,7 @@ from filebrowser.sites import site as fb_site
 
 urlpatterns = [
     url(r'^$', include('homepage.urls')),
+    url(r'^article/', include('articles.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include([
         url(r'^', include(admin.site.urls)),

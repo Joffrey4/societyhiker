@@ -14,6 +14,7 @@ class Profile(models.Model):
     bio = models.TextField(_('Biographie'), blank=True)
     location = models.CharField(_('Lieu'), max_length=30, blank=True)
     birth_date = models.DateField(_('Date de naissance'), null=True, blank=True)
+    picture = models.ImageField(_('Photo'), upload_to='account/images/profile', default='account/images/profile/default.jpg')
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):

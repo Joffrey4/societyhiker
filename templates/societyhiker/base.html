@@ -4,51 +4,28 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Society Hiker - {% block title %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>
+        {% block head-title-before %}{% endblock head-title-before %}
+        Society Hiker
+        {% block head-title-after %}{% endblock head-title-after %}
+    </title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif+Caption" rel="stylesheet">
 
-    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-    <script src="{% static 'js/jquery.background-video.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'jquery.background-video.css' %}">
-
+    <link rel="stylesheet" href="{% static 'fonts/PTserif.css' %}">
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.background-video').bgVideo({
-                pauseAfter: 12,
-                fadeOnEnd: true,
-                showPausePlay: false
-            });
-        });
-    </script>
+    {% block head-css-js %}{% endblock head-css-js %}
 </head>
 <body>
 
-<div class="header jquery-background-video-wrapper" style="position: fixed">
-    <video class="background-video jquery-background-video" loop autoplay muted poster="{% static 'background/video/bazar/image.jpg' %}">
-        <source src="{% static 'background/video/bazar/video.mp4' %}" type="video/mp4">
-        <source src="{% static 'background/video/bazar/video.webm' %}" type="video/webm">
-        <source src="{% static 'background/video/bazar/video.ogv' %}" type="video/ogg">
-    </video>
-
-    <header>
-        <h1 class="archive-title page-title">
-            {% block page-title %}{% endblock page-title %}
-        </h1>
-
-        <div class="page-description">
-            <p>{% block description %}{% endblock description %}</p>
-        </div>
-
-        <div class="big-line"></div>
-    </header>
-</div>
-
+{% block body-header %}{% endblock body-header %}
 
 <nav>
     <ul class="navigation">
@@ -76,7 +53,11 @@
 </nav>
 
 <div class="content">
-    {% block content %}{% endblock content %}
+    <div class="content-inner">
+        <div class="content-body">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
 </div>
 
 </body>
