@@ -1,0 +1,29 @@
+<main>
+    {% if article_list %}
+        {% for article in article_list %}
+            {% url 'article' article.link as link %}
+            <article class="article_list">
+                <header>
+                    <h2 class="article_list_header">
+                        {% if link %}
+                            <a href="{{ link }}">{{ article.title }}</a>
+                        {%  endif %}
+                    </h2>
+                </header>
+
+                <div class="article_list_summary">
+                    {{ article.subhead }}
+                </div>
+
+                <footer class="article_list_meta">
+                    {% if link %}
+                        Le <a href="{{ link }}"><time datetime="{{ article.date|date:'Y-m-d' }}">{{ article.date|date:'j F Y' }}</time></a>
+                    {%  endif %}
+                    {% with article.author.profile.nickname as author %}
+                        par <a href="#" title="Posté par {{ author }}">{{ author }}</a>.
+                    {% endwith %}
+                </footer>
+            </article>
+        {% endfor %}
+    {% endif %}
+</main>

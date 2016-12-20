@@ -6,7 +6,6 @@ from .models import Category, Article, Comment
 from django.contrib.auth.models import User
 
 
-# Create your views here.
 def article(request, link):
     try:
         article = Article.objects.get(link=link)
@@ -15,3 +14,13 @@ def article(request, link):
     else:
         context = {'article': article}
         return render(request, 'articles/article_video.html', context)
+
+
+def category(request):
+    try:
+        category_list = Category.objects.all()
+    except:
+        raise Http404("This page does not exist.")
+    else:
+        context = {'category': category_list}
+        return render(request, 'articles/category_list.html', context)

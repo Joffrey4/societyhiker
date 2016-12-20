@@ -19,6 +19,7 @@ a {
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
+    color: inherit;
 }
 
 h1, h2 {
@@ -80,17 +81,17 @@ p {
     line-height: 1.4;
 }
 
-header, .archive-title, .page-description, .big-line, .small-line, .article-meta {
+.header-main, .archive-title, .page-description, .big-line, .small-line, .article-meta {
     margin-left: auto;
     margin-right: auto;
 }
 
-header {
+.header-main {
     width: 100%;
     padding: 60px 0;
 }
 
-header::before {
+.header-main::before {
     content: '';
     position: absolute;
     top: -80px;
@@ -146,16 +147,20 @@ header::before {
     margin-top: 20px;
 }
 
-.article-meta, .article-meta a{
-    padding-top: 20px;
-    color: rgba(255,255,255,0.8);
-    text-align: center;
+.article-meta, .article-meta a, .article_list_meta{
     font-family: 'Fira Sans', sans-serif;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 1px;
-    line-height: 18px;
     text-transform: uppercase;
+}
+
+.article-meta, .article-meta a {
+    padding-top: 20px;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    line-height: 18px;
+
 }
 
 .article-meta a:hover, .article-meta a:focus, .article-meta a:active {
@@ -242,7 +247,7 @@ nav {
 
 @media (min-width: 1200px) {
     .content-inner {
-        max-width: 660px;
+        max-width: 640px;
     }
 }
 
@@ -330,3 +335,69 @@ nav {
     color: #000;
     opacity: .6;
 }
+
+.author-card {
+    max-width: 540px;
+    margin: 50px auto 10px;
+}
+
+.author-avatar {
+    box-sizing: content-box;
+    padding: 3px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.author-name {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.author-bio {
+    font-size: .95rem;
+    color: rgba(0,0,0,.4);
+}
+
+.article_list {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.article_list:nth-of-type(1) {
+    padding-top: 0;
+}
+
+.article_list_header {
+    font-size: 1.7rem;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.article_list_header a:hover, .article_list_header a:active, .article_list_header a:focus {
+    opacity: 0.7;
+}
+
+.article_list_summary {
+    margin-bottom: 15px;
+    font-family: 'PT Serif', serif;
+    font-size: 1.03rem;
+    line-height: 1.72;
+    letter-spacing: 0.0055rem;
+}
+
+.article_list_summary, .article_list_meta {
+    padding-left: 1px;
+}
+
+.article_list_meta {
+    color: rgba(0,0,0,0.6);
+    line-height: 1.42;
+}
+
+.article_list_meta a:hover, .article_list_meta a:focus, .article_list_meta a:active {
+    color: #000;
+    opacity: 0.8;
+}
+

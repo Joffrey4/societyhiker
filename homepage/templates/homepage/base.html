@@ -14,7 +14,7 @@
 {% block body-header %}
     {% include "societyhiker/includes/body-header-video.html" with video=video %}
 
-        <header>
+        <header class="header-main">
             {% include "societyhiker/includes/body-header-bigTitle.html" with title='Society Hiker' %}
             {% include "societyhiker/includes/body-header-bigDescription.html" with description='Blog de sciences, tendances, développement et nouvelles technologies.' %}
             {% include "societyhiker/includes/body-header-bigLine.html" %}
@@ -25,5 +25,5 @@
 
 // Content section
 {% block content %}
-    bonjour
+    {% include "homepage/includes/content-articlesList.html" %}
 {% endblock content %}

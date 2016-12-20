@@ -16,13 +16,14 @@
 {% block body-header %}
     {% block body-header-backround %}
     {% endblock body-header-backround %}
-    <header>
+
+        <header class="header-main">
             {% include "societyhiker/includes/body-header-bigTitle.html" with title=article.title %}
             {% include "societyhiker/includes/body-header-bigDescription.html" with description=article.subhead %}
             {% include "societyhiker/includes/body-header-smallLine.html" %}
             {% include "societyhiker/includes/body-header-bigMeta.html" with author=article.author.profile.nickname date=article.date %}
         </header>
-        </div>
+    </div>
     <!-- Error: Tag matches not closing OK -->
     <!-- Error: Start tag has wrong closing tag OK -->
 {% endblock body-header %}
@@ -32,7 +33,8 @@
     {{ article.body|safe }}
 
     <footer class="article-submeta">
-        {% include "societyhiker/includes/content-footer-shareModule.html" %}
-        {% include "societyhiker/includes/content-footer-submeta.html" with category=article.category %}
+        {% include "articles/includes/content-footer-shareModule.html" %}
+        {% include "articles/includes/content-footer-submeta.html" with category=article.category %}
+        {% include "articles/includes/content-footer-author.html" with author=article.author.profile.nickname image=article.author.profile.picture.url bio=article.author.profile.bio %}
     </footer>
 {% endblock content %}
