@@ -175,28 +175,32 @@ nav {
     min-height: 100%;
 }
 
-.navigation {
-    padding-left: 15px;
-}
-
-.navigation li {
-    margin-top: 20px;
-}
-
-.navigation li a {
+.nav-link {
+    position: relative;
     display: block;
     color: #777;
     font-size: 22px;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 60%;
     border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
-.navigation li a:hover, .navigation li a:focus, .navigation li a:active {
+.nav-link:hover, .nav-link:focus, .nav-link:active {
     color: #fff;
 }
 
 .icon-container {
-    width: 20px;
-    padding-bottom: 5px;
+    text-align: center;
+    height: 62px;
+    padding-top: 20px;
+    z-index: 3;
+    position: relative;
 }
 
 .fa {
@@ -213,6 +217,10 @@ nav {
     font-family: 'Fira Sans', sans-serif;
     line-height: 15px;
     color: #fff;
+    text-align: center;
+    margin-top: -15px;
+    z-index: 1;
+    position: relative;
 }
 
 #home:hover + #home-name, #author:hover + #author-name, #category:hover + #category-name, #search:hover + #search-name {

@@ -31,7 +31,7 @@
     <ul class="navigation">
         {% url 'index' as link_index %}
         {% if link_index %}
-            <li><a href="{{ link_index }}">
+            <li><a class="nav-link" href="{{ link_index }}">
                 <div class="icon-container" id="home"><i class="fa fa-home" aria-hidden="true"></i></div>
                 <div id="home-name">Accueil</div>
             </a></li>
@@ -39,21 +39,21 @@
 
         {% url 'author_list' as link_author %}
         {% if link_author %}
-            <li><a href="{{ link_author }}">
+            <li><a class="nav-link" href="{{ link_author }}">
                 <div class="icon-container" id="author"><i class="fa fa-user" aria-hidden="true"></i></div>
-                <div id="author-name">Auteur</div>
+                <div id="author-name">Auteurs</div>
             </a></li>
         {% endif %}
 
         {% url 'category_list' as link_category %}
         {% if link_category %}
-            <li><a href="{{ link_category }}">
+            <li><a class="nav-link" href="{{ link_category }}">
                 <div class="icon-container" id="category"><i class="fa fa-heart" style="font-size: 19px;" aria-hidden="true"></i></div>
                 <div id="category-name">Catég.</div>
             </a></li>
         {% endif %}
 
-        <li><a href="#">
+        <li><a class="nav-link" href="#">
             <div class="icon-container" id="search"><i class="fa fa-search" style="font-size: 19px;" aria-hidden="true"></i></div>
             <div id="search-name">Recher.</div>
         </a></li>
