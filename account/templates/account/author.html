@@ -1,0 +1,23 @@
+{% extends "account/base.html" %}
+
+// Tile section
+{% block title %}
+    {{ firstname }} {{ surname }}
+{% endblock title %}
+
+// Header section
+{% block body-header-backround %}
+    {% include "societyhiker/includes/body-header-image.html" with image=author.cover.url %}
+{% endblock body-header-backround %}
+
+{% block header %}
+    {% with author.firstname|add:" "|add:author.surname as title %}
+        {% include "societyhiker/includes/body-header-bigTitle.html" with title=title %}
+    {% endwith %}
+    {% include "societyhiker/includes/body-header-bigDescription.html" with description=author.bio %}
+{% endblock header %}
+
+// Content section
+{% block content %}
+    {% include "societyhiker/includes/content-articlesList.html" %}
+{% endblock content %}

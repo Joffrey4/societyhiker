@@ -19,8 +19,11 @@
                     {% if link %}
                         Le <a href="{{ link }}"><time datetime="{{ article.date|date:'Y-m-d' }}">{{ article.date|date:'j F Y' }}</time></a>
                     {%  endif %}
-                    {% with article.author.profile.nickname as author %}
-                        par <a href="#" title="Posté par {{ author }}">{{ author }}</a>.
+                    {% with article.author.profile.firstname|add:" "|add:article.author.profile.surname as author %}
+                        {% url 'author' article.author.profile.link as link %}
+                        {% if link %}
+                            par <a href="{{ link }}" title="Posté par {{ author }}">{{ author }}</a>.
+                        {% endif %}
                     {% endwith %}
                 </footer>
             </article>

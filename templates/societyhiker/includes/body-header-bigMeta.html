@@ -1,4 +1,7 @@
 <div class="article-meta">
-    Par <a href="#" title="Posté par {{ author }}">{{ author }}</a>,
+    {% url 'author' author_link as link %}
+    {% if link %}
+        Par <a href="{{ link }}" title="Posté par {{ author }}">{{ author }}</a>,
+    {% endif %}
     le <time datetime="{{ date|date:'Y-m-d' }}">{{ date|date:'j F Y' }}</time>.
 </div>

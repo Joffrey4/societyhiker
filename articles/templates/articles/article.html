@@ -1,6 +1,25 @@
 {% extends "articles/base.html" %}
 
-// Header section
+// Title section
 {% block title %}
     {{ article.title }}
 {% endblock title %}
+
+// Header section
+{% block header %}
+    {% include "societyhiker/includes/body-header-bigTitle.html" with title=article.title %}
+    {% include "societyhiker/includes/body-header-bigDescription.html" with description=article.subhead %}
+    {% include "societyhiker/includes/body-header-smallLine.html" %}
+    {% include "societyhiker/includes/body-header-bigMeta.html" with author=article.author.profile.firstname|add:" "|add:article.author.profile.surname author_link=article.author.profile.link date=article.date %}
+{% endblock header %}
+
+// Content section
+{% block content %}
+    {{ article.body|safe }}
+
+    <footer class="article-submeta">
+        {% include "articles/includes/content-footer-shareModule.html" %}
+        {% include "articles/includes/content-footer-submeta.html" with category=article.category %}
+        {% include "articles/includes/content-footer-author.html" with author=article.author.profile.firstname|add:" "|add:article.author.profile.surname author_link=article.author.profile.link image=article.author.profile.picture.url bio=article.author.profile.bio %}
+    </footer>
+{% endblock content %}

@@ -1,0 +1,26 @@
+<main>
+    {% if author_list %}
+        {% for author in author_list %}
+            {% url 'author' author.link as link %}
+            <article class="article_list">
+                <header>
+                    <h2 class="article_list_header">
+                        {% if link %}
+                            <a href="{{ link }}">{{ author.firstname }} {{ author.surname }}</a>
+                        {%  endif %}
+                    </h2>
+                </header>
+
+                <div class="article_list_summary">
+                    {{ author.bio }}
+                </div>
+
+                <footer class="article_list_meta">
+                    {% if link %}
+                        <a href="{{ link }}">Consulter la liste de ses articles</a>.
+                    {%  endif %}
+                </footer>
+            </article>
+        {% endfor %}
+    {% endif %}
+</main>

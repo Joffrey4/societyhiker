@@ -2,6 +2,9 @@
 
 <div class="author-card">
     <img src="{% static image %}" class="author-avatar" width="96" height="96">
-    <h3 class="author-name">{{ author }}</h3>
+    {% url 'author' author_link as link %}
+    {% if link %}
+        <h3 class="author-name"><a href="{{ link }}">{{ author }}</a></h3>
+    {% endif %}
     <p class="author-bio">{{ bio }}</p>
 </div>

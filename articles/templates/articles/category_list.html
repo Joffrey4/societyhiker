@@ -1,0 +1,24 @@
+{% extends "articles/base.html" %}
+
+// Title section
+{% block title %}
+    Catégories
+{% endblock title %}
+
+
+// Header section
+{% block body-header-backround %}
+        {% include "societyhiker/includes/body-header-image.html" with image='articles/images/header/category/default_categorylist.jpg' %}
+{% endblock body-header-backround %}
+
+{% block header %}
+    {% include "societyhiker/includes/body-header-bigTitle.html" with title='Catégories' %}
+    {% include "societyhiker/includes/body-header-bigDescription.html" with description="Index des catégories d'articles." %}
+    {% include "societyhiker/includes/body-header-smallLine.html" %}
+{% endblock header %}
+
+
+// Content section
+{% block content %}
+    {% include "articles/includes/content-categoryList.html" %}
+{% endblock content %}

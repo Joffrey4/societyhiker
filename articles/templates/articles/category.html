@@ -1,0 +1,23 @@
+{% extends "articles/base.html" %}
+
+// Title section
+{% block title %}
+    {{ category.title }}
+{% endblock title %}
+
+
+// Header section
+{% block body-header-backround %}
+    {% include "societyhiker/includes/body-header-image.html" with image=category.image.url %}
+{% endblock body-header-backround %}
+
+{% block header %}
+    {% include "societyhiker/includes/body-header-bigTitle.html" with title=category.title %}
+    {% include "societyhiker/includes/body-header-smallLine.html" %}
+{% endblock header %}
+
+
+// Content section
+{% block content %}
+    {% include "societyhiker/includes/content-articlesList.html" %}
+{% endblock content %}

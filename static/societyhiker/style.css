@@ -63,7 +63,7 @@ p {
     position: fixed;
     top: 0;
     left: 0;
-    width: 37.2%;
+    width: 37.5%;
     min-height: 100%;
     z-index: 1;
     padding: 0;
@@ -74,7 +74,7 @@ p {
     background-size: cover;
     background-color: #252525;
     background-image: url(background/video/header/image.jpg);
-    background-position: top center;;
+    background-position: top center;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -121,14 +121,13 @@ p {
 }
 
 .page-description {
-    font-size: 1.1rem;
-    max-height: 128px;
+    font-size: 1.28rem;
     font-weight: 300;
     font-family: 'PT Sans', sans-serif;
 }
 
 .page-title {
-    font-size: 2.4rem;
+    font-size: 2.55rem;
 }
 
 .big-line, .small-line {
@@ -223,7 +222,7 @@ nav {
 
 .content {
     position: relative;
-    left: 37.2%;
+    left: 37.5%;
     width: calc(62.8% - 50px);
     z-index: 2;
 }
@@ -351,6 +350,10 @@ nav {
 .author-name {
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+.author-name a:hover, .author-name a:focus, .author-name a:active {
+    color: rgba(0, 0, 0, .4);
 }
 
 .author-bio {

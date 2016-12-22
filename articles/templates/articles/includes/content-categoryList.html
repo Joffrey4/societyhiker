@@ -1,0 +1,22 @@
+<main>
+    {% if category_list %}
+        {% for category in category_list %}
+            {% url 'category' category.link as link %}
+            <article class="article_list">
+                <header>
+                    <h2 class="article_list_header">
+                        {% if link %}
+                            <a href="{{ link }}">{{ category.title }}</a>
+                        {%  endif %}
+                    </h2>
+                </header>
+
+                <footer class="article_list_meta">
+                    {% if link %}
+                        <a href="{{ link }}">Consulter les articles de cette catégorie</a>.
+                    {%  endif %}
+                </footer>
+            </article>
+        {% endfor %}
+    {% endif %}
+</main>

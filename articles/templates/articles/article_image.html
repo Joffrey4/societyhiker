@@ -1,1 +1,5 @@
 {% extends "articles/article.html" %}
+
+{% block body-header-backround %}
+    {% include "societyhiker/includes/body-header-image.html" with image=article.image.url %}
+{% endblock body-header-backround %}

@@ -136,3 +136,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/societyhiker/'),
 )
+
+STATIC_ROOT_ARTICLES = os.path.join(BASE_DIR, 'articles/static')
+STATIC_ROOT_ACCOUNT = os.path.join(BASE_DIR, 'account/static')

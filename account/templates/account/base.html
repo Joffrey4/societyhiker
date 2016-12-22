@@ -1,16 +1,10 @@
 {% extends "societyhiker/base.html" %}
 
-
-// head section
+// Header section
 {% block head-title-before %}
     {% block title %}
     {% endblock title %}
-    -
 {% endblock head-title-before %}
-
-{% block head-title-after %}{% endblock head-title-after %}
-{% block head-css-js %}
-{% endblock head-css-js %}
 
 
 // body header section
@@ -19,10 +13,9 @@
     {% endblock body-header-backround %}
 
         <header class="header-main">
-            {% block header %}
-            {% endblock header %}
+        {%  block header %}
+        {% endblock header %}
         </header>
     </div>
     <!-- Error: Tag matches not closing OK -->
-    <!-- Error: Start tag has wrong closing tag OK -->
 {% endblock body-header %}

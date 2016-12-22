@@ -1,0 +1,23 @@
+{% extends "account/base.html" %}
+
+{% block title %}
+    Auteurs
+{% endblock title %}
+
+// Header section
+{% block body-header-backround %}
+    {% include "societyhiker/includes/body-header-image.html" with image='account/images/cover/default_authorlist.jpg' %}
+{% endblock body-header-backround %}
+
+{% block header %}
+    {% with 'Auteurs' as title %}
+        {% include "societyhiker/includes/body-header-bigTitle.html" with title=title %}
+    {% endwith %}
+    {% include "societyhiker/includes/body-header-bigDescription.html" with description='Liste des auteurs ayant posté au moins un article sur ce blog.' %}
+    {% include "societyhiker/includes/body-header-smallLine.html" %}
+{% endblock header %}
+
+// Content section
+{% block content %}
+    {% include "account/includes/content-authorList.html" %}
+{% endblock content %}
