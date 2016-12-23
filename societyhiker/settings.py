@@ -25,7 +25,7 @@ SECRET_KEY = 'r*y87akk4s1&q0_o$%@$(^m&0g_wz_-e#6khk+lb*1c$8h&g=d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -131,11 +131,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT_ARTICLES = os.path.join(BASE_DIR, 'articles/static')
+STATIC_ROOT_ACCOUNT = os.path.join(BASE_DIR, 'account/static')
 
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/societyhiker/'),
 )
 
-STATIC_ROOT_ARTICLES = os.path.join(BASE_DIR, 'articles/static')
-STATIC_ROOT_ACCOUNT = os.path.join(BASE_DIR, 'account/static')
+
+# Import variable settings from dev/prod settings.
+try:
+    from settings.dev import *
+except ImportError:
+    pass

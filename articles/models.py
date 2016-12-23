@@ -11,10 +11,6 @@ from django.db import models
 
 fs = FileSystemStorage(location=settings.STATIC_ROOT_ARTICLES)
 
-# A SUPPRIMER
-def content_file_name(instance, filename):
-    return 'articles/images/header/article/'.join([instance.link, filename])
-
 
 @python_2_unicode_compatible
 class Category(models.Model):

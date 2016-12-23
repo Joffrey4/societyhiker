@@ -49,4 +49,4 @@ class Profile(models.Model):
         Make the 'Profile.nickname' readable by returning its nickname when called.
         :return: nickname, the nickname of the user.
         """
-        return self.firstname + self.surname
+        return self.user.username
