@@ -73,7 +73,7 @@ p {
     align-items: flex-end;
     background-size: cover;
     background-color: #252525;
-    background-image: url(background/video/header/image.jpg);
+    background-image: url(common/background/video/header/image.jpg);
     background-position: top center;
 
     -webkit-font-smoothing: antialiased;

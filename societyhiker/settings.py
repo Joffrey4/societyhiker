@@ -76,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'societyhiker.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -138,10 +137,3 @@ STATIC_ROOT_ACCOUNT = os.path.join(BASE_DIR, 'account/static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/societyhiker/'),
 )
-
-
-# Import variable settings from dev/prod settings.
-try:
-    from settings.dev import *
-except ImportError:
-    pass

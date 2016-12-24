@@ -2,19 +2,19 @@
 
 <div class="header jquery-background-video-wrapper" style="position: fixed">
 
-    {% with 'background/video/'|add:video|add:'/image.jpg' as static_jpg %}
+    {% with 'common/background/video/'|add:video|add:'/image.jpg' as static_jpg %}
     <video class="background-video jquery-background-video" loop autoplay muted poster="{% static static_jpg %}">
     {% endwith %}
 
-        {% with 'background/video/'|add:video|add:'/video.mp4' as static_mp4 %}
+        {% with 'common/background/video/'|add:video|add:'/video.mp4' as static_mp4 %}
             <source src="{% static static_mp4 %}" type="video/mp4">
         {% endwith %}
 
-        {% with 'background/video/'|add:video|add:'/video.webm' as static_webm %}
+        {% with 'common/background/video/'|add:video|add:'/video.webm' as static_webm %}
             <source src="{% static static_webm %}" type="video/webm">
         {% endwith %}
 
-        {% with 'background/video/'|add:video|add:'/video.ogv' as static_ogv %}
+        {% with 'common/background/video/'|add:video|add:'/video.ogv' as static_ogv %}
             <source src="{% static static_ogv %}" type="video/ogg">
         {% endwith %}
     </video>
