@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'r*y87akk4s1&q0_o$%@$(^m&0g_wz_-e#6khk+lb*1c$8h&g=d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'societyhiker.net', 'vps356855.ovh.net', '137.74.46.242']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'societyhiker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hiker_db',
-        'USER': 'hikeradm',
+        'USER': 'root',
         'PASSWORD': 'Jojococo888',
-        'HOST': 'localhost',
+        'HOST': '',
         'PORT': '',
     }
 }
